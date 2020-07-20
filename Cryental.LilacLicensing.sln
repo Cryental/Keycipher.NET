@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryental.LilacLicensing", "Cryental.LilacLicensing\Cryental.LilacLicensing.csproj", "{F8D0CEF1-519C-4EAA-9377-C80F576BBBFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryental.LilacLicensing.Test", "Cryental.LilacLicensing.Test\Cryental.LilacLicensing.Test.csproj", "{B14C79A9-0236-4928-8AF6-6CB8153D816D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8D0CEF1-519C-4EAA-9377-C80F576BBBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D0CEF1-519C-4EAA-9377-C80F576BBBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D0CEF1-519C-4EAA-9377-C80F576BBBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D0CEF1-519C-4EAA-9377-C80F576BBBFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B14C79A9-0236-4928-8AF6-6CB8153D816D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B14C79A9-0236-4928-8AF6-6CB8153D816D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B14C79A9-0236-4928-8AF6-6CB8153D816D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B14C79A9-0236-4928-8AF6-6CB8153D816D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C76D5518-B2FB-4E4D-A7DB-026F0733370C}
+	EndGlobalSection
+EndGlobal
