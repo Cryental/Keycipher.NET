@@ -22,6 +22,10 @@ If you want to use this licensing system, please create an account on my website
 ## Usages
 Please check a example project in the repo.
 
+## Requirements
+- .NET Framework 4.8
+- Account Key, Public and Private Key from Your Product ID
+
 This service is not for C# only. We are providing API service for it so you can use for any kind of projects.
 
 Copyright © 2020 Cryental and Volistx Team.
