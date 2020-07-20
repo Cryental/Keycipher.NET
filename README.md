@@ -1,9 +1,9 @@
 # LilacLicensing.NET
 Simple Licensing System, But with Multiple and More Powerful Features
 
-We provide software developers with a secure unprecedented level of protection for their applications.
+**We provide software developers with a secure unprecedented level of protection for their applications.**
 
-This system is ready to use for productions. Several big companies and developers are using our service already.
+**This system is ready to use for productions. Several big companies and developers are using our service already.**
 
 
 ## Built for your workflow
