@@ -47,6 +47,9 @@ namespace Cryental.LilacLicensing.Models
             [JsonProperty("isLifetime")]
             public bool IsLifetime { get; set; }
 
+            [JsonProperty("isHardwareLocked")]
+            public bool IsHardwareLocked { get; set; }
+
             [JsonProperty("isBanned")]
             public bool IsBanned { get; set; }
 
@@ -97,14 +100,13 @@ namespace Cryental.LilacLicensing.Models
 
                 if (parsedResponse.Result)
                 {
-                    RefreshData();
                     return;
                 }
 
                 throw new Exception(parsedResponse.Message);
             }
 
-            public void RefreshData()
+            public Object RefreshData()
             {
                 if (string.IsNullOrEmpty(Config.PrivateKey))
                 {
@@ -147,26 +149,10 @@ namespace Cryental.LilacLicensing.Models
                     throw new Exception(parsedResponse.Message);
                 }
 
-                License = parsedResponse.Object.License;
-                IsActivated = parsedResponse.Object.IsActivated;
-                IsExpired = parsedResponse.Object.IsExpired;
-                IsLifetime = parsedResponse.Object.IsLifetime;
-                IsBanned = parsedResponse.Object.IsBanned;
-                if (parsedResponse.Object.Subscription != null)
-                {
-                    Subscription = new Subscription
-                    {
-                        Starts = parsedResponse.Object.Subscription.Starts,
-                        Expires = parsedResponse.Object.Subscription.Expires
-                    };
-                }
-
-                Extra = new Extra
-                {
-                    LockedTo = parsedResponse.Object.Extra.LockedTo,
-                    CustomData = parsedResponse.Object.Extra.CustomData,
-                    Comment = parsedResponse.Object.Extra.Comment
-                };
+                var newObject = parsedResponse.Object;
+                newObject.Config = Config;
+                newObject.HardwareID = HardwareID;
+                return newObject;
             }
 
             public void Unban()
@@ -209,7 +195,6 @@ namespace Cryental.LilacLicensing.Models
 
                 if (parsedResponse.Result)
                 {
-                    RefreshData();
                     return;
                 }
 
@@ -256,7 +241,6 @@ namespace Cryental.LilacLicensing.Models
 
                 if (parsedResponse.Result)
                 {
-                    RefreshData();
                     return;
                 }
 
@@ -303,7 +287,6 @@ namespace Cryental.LilacLicensing.Models
 
                 if (parsedResponse.Result)
                 {
-                    RefreshData();
                     return;
                 }
 
@@ -350,7 +333,6 @@ namespace Cryental.LilacLicensing.Models
 
                 if (parsedResponse.Result)
                 {
-                    RefreshData();
                     return;
                 }
 
@@ -402,7 +384,6 @@ namespace Cryental.LilacLicensing.Models
 
                 if (parsedResponse.Result)
                 {
-                    RefreshData();
                     return;
                 }
 
@@ -454,7 +435,6 @@ namespace Cryental.LilacLicensing.Models
 
                 if (parsedResponse.Result)
                 {
-                    RefreshData();
                     return;
                 }
 
@@ -501,7 +481,6 @@ namespace Cryental.LilacLicensing.Models
 
                 if (parsedResponse.Result)
                 {
-                    RefreshData();
                     return;
                 }
 
@@ -553,7 +532,6 @@ namespace Cryental.LilacLicensing.Models
 
                 if (parsedResponse.Result)
                 {
-                    RefreshData();
                     return;
                 }
 
@@ -607,7 +585,6 @@ namespace Cryental.LilacLicensing.Models
 
                 if (parsedResponse.Result)
                 {
-                    RefreshData();
                     return;
                 }
 
