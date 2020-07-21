@@ -26,7 +26,7 @@ If you want to use this licensing system, please create an account on my website
 Please check a example project in the repo.
 
 ## Requirements for Build
-- .NET Framework 4.8
+- .NET Framework 4.5.2 or Above
 
 ## Requirements to Use Licensing Module
 - Product ID, Public and Private Key: https://cryental.dev/services/licensing/
