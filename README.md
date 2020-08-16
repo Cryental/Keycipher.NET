@@ -1,4 +1,4 @@
-# LilacLicensing.NET
+# Keycipher.NET
 Simple Licensing System, But with Multiple and More Powerful Features
 
 **We provide software developers with a secure unprecedented level of protection for their applications.**

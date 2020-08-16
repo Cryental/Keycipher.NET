@@ -1,4 +1,4 @@
-﻿namespace Cryental.LilacLicensing
+﻿namespace Keycipher
 {
     public class Configuration
     {
@@ -6,6 +6,5 @@
         public string PublicKey { get; set; }
         public string PrivateKey { get; set; }
         public string AccessKey { get; set; }
-        public bool SecurityCheck { get; set; } = false;
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Cryental.LilacLicensing.Helpers
+namespace Keycipher.Helpers
 {
     public static class Verifications
     {

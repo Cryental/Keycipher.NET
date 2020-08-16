@@ -1,4 +1,4 @@
-﻿namespace Cryental.LilacLicensing
+﻿namespace Keycipher
 {
     internal static class Globals
     {

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
-using Cryental.LilacLicensing.Helpers;
+using Keycipher.Helpers;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace Cryental.LilacLicensing.Models
+namespace Keycipher.Models
 {
     public class Licenses
     {

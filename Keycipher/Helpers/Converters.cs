@@ -1,4 +1,4 @@
-﻿namespace Cryental.LilacLicensing.Helpers
+﻿namespace Keycipher.Helpers
 {
     public static class Converters
     {

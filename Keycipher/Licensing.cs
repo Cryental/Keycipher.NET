@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Security.Cryptography;
-using Cryental.LilacLicensing.Helpers;
-using Cryental.LilacLicensing.Models;
 using DeviceId;
 using DeviceId.Encoders;
 using DeviceId.Formatters;
+using Keycipher.Helpers;
+using Keycipher.Models;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace Cryental.LilacLicensing
+namespace Keycipher
 {
     public class Licensing
     {

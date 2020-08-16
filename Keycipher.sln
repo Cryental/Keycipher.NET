@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryental.LilacLicensing", "Cryental.LilacLicensing\Cryental.LilacLicensing.csproj", "{F8D0CEF1-519C-4EAA-9377-C80F576BBBFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycipher", "Keycipher\Keycipher.csproj", "{F8D0CEF1-519C-4EAA-9377-C80F576BBBFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryental.LilacLicensing.Test", "Cryental.LilacLicensing.Test\Cryental.LilacLicensing.Test.csproj", "{B14C79A9-0236-4928-8AF6-6CB8153D816D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycipher.Test", "Keycipher.Test\Keycipher.Test.csproj", "{B14C79A9-0236-4928-8AF6-6CB8153D816D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

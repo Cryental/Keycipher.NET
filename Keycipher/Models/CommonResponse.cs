@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Cryental.LilacLicensing.Models
+namespace Keycipher.Models
 {
     public class CommonResponse
     {

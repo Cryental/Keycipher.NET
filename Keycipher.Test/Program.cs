@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Cryental.LilacLicensing.Test
+namespace Keycipher.Test
 {
     internal class Program
     {

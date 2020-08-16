@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Lilac Licensing")]
-[assembly: AssemblyDescription("Lilac Licensing Wrapper For C#")]
+[assembly: AssemblyTitle("Keycipher")]
+[assembly: AssemblyDescription("Keycipher Wrapper For C#")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Volistx Team")]
-[assembly: AssemblyProduct("Lilac Licensing")]
+[assembly: AssemblyProduct("Keycipher")]
 [assembly: AssemblyCopyright("© 1997-2020 Cryental and Volistx Team.")]
 [assembly: AssemblyTrademark("Simple, Beautiful and Powerful.")]
 [assembly: AssemblyCulture("")]
