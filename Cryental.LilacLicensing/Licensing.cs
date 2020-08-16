@@ -35,11 +35,20 @@ namespace Cryental.LilacLicensing
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
         }
 
+        /// <summary>
+        ///     Get current computer's hardware ID.
+        /// </summary>
+        /// <returns></returns>
         public string GetHardwareID()
         {
             return HardwareID;
         }
 
+        /// <summary>
+        ///     Validate the license key.
+        /// </summary>
+        /// <param name="license">License key</param>
+        /// <returns></returns>
         public Licenses.Object Validate(string license)
         {
             if (string.IsNullOrEmpty(Config.PublicKey))
@@ -89,6 +98,20 @@ namespace Cryental.LilacLicensing
             throw new Exception(parsedResponse.Message);
         }
 
+        /// <summary>
+        ///     Search a specific license. It will return NULL if not found.
+        /// </summary>
+        /// <param name="license">License key</param>
+        /// <returns></returns>
+        public Licenses.Object SearchLicense(string license)
+        {
+            return GetAllLicenses().Find(x => x.License == license);
+        }
+
+        /// <summary>
+        ///     Get all licenses for a product with details.
+        /// </summary>
+        /// <returns></returns>
         public List<Licenses.Object> GetAllLicenses()
         {
             if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -141,6 +164,10 @@ namespace Cryental.LilacLicensing
             return tempList;
         }
 
+        /// <summary>
+        ///     Delete a provided license.
+        /// </summary>
+        /// <param name="license">License key</param>
         public void DeleteLicense(string license)
         {
             if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -182,7 +209,17 @@ namespace Cryental.LilacLicensing
             throw new Exception(parsedResponse.Message);
         }
 
-        public Licenses.Object GenerateLicense(bool hardwareLock, int expireHour, bool lifetime = false, string customData = "", string comment = "")
+        /// <summary>
+        ///     Generate license keys for a product.
+        /// </summary>
+        /// <param name="counts">License counts</param>
+        /// <param name="hardwareLock">Hardware lock status</param>
+        /// <param name="expireHour">Expire hours</param>
+        /// <param name="lifetime">Lifetime status</param>
+        /// <param name="customData">Custom Data for toggling features if required.</param>
+        /// <param name="comment">Comment</param>
+        /// <returns></returns>
+        public List<Licenses.Object> GenerateLicense(int counts, bool hardwareLock, int expireHour, bool lifetime = false, string customData = "", string comment = "")
         {
             if (string.IsNullOrEmpty(Config.PrivateKey))
             {
@@ -199,6 +236,11 @@ namespace Cryental.LilacLicensing
                 throw new Exception("You must provide a correct private key to use this function.");
             }
 
+            if (counts <= 0)
+            {
+                throw new Exception("Please enter 1 or bigger integer for counts parameter.");
+            }
+
             if (expireHour <= 0)
             {
                 throw new Exception("You must provide a correct expire hour to use this function.");
@@ -211,6 +253,7 @@ namespace Cryental.LilacLicensing
             request.AddHeader("X-PRODUCT-ID", Config.ProductID);
             request.AddHeader("X-ACCESS-KEY", Config.AccessKey);
 
+            request.AddParameter("counts", counts.ToString());
             request.AddParameter("expireHour", expireHour.ToString());
             request.AddParameter("hwidStatus", hardwareLock.ToStringBoolean());
             request.AddParameter("lifetime", lifetime.ToStringBoolean());
@@ -224,17 +267,23 @@ namespace Cryental.LilacLicensing
                 throw new WebException("Can't connect to the server at this moment.");
             }
 
-            var parsedResponse = JsonConvert.DeserializeObject<License.RawInput>(response.Content);
+            var parsedResponse = JsonConvert.DeserializeObject<License.RawInputLists>(response.Content);
 
-            if (parsedResponse.Result)
+            if (!parsedResponse.Result)
             {
-                parsedResponse.Object.Config = Config;
-                parsedResponse.Object.HardwareID = HardwareID;
-
-                return parsedResponse.Object;
+                throw new Exception(parsedResponse.Message);
             }
 
-            throw new Exception(parsedResponse.Message);
+            var tempLists = new List<Licenses.Object>();
+
+            foreach (var obj in parsedResponse.Objects)
+            {
+                obj.Config = Config;
+                obj.HardwareID = HardwareID;
+                tempLists.Add(obj);
+            }
+
+            return tempLists;
         }
     }
 }

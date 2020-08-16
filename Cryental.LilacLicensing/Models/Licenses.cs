@@ -16,6 +16,18 @@ namespace Cryental.LilacLicensing.Models
 
             [JsonProperty("expires")]
             public string Expires { get; set; }
+
+            [JsonProperty("activated_ip")]
+            public Geolocation ActivatedIP { get; set; }
+
+            [JsonProperty("activated_date")]
+            public string ActivatedDate { get; set; }
+
+            [JsonProperty("lastloggedon_ip")]
+            public Geolocation LastLoggedOnIP { get; set; }
+
+            [JsonProperty("lastloggedon_date")]
+            public string LastLoggedOnDate { get; set; }
         }
 
         public class Extra
@@ -53,12 +65,18 @@ namespace Cryental.LilacLicensing.Models
             [JsonProperty("isBanned")]
             public bool IsBanned { get; set; }
 
+            [JsonProperty("definedExpireHours")]
+            public int ExpireHours { get; set; }
+
             [JsonProperty("subscription")]
             public Subscription Subscription { get; set; }
 
             [JsonProperty("extra")]
             public Extra Extra { get; set; }
 
+            /// <summary>
+            ///     Ban this license.
+            /// </summary>
             public void Ban()
             {
                 if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -106,6 +124,10 @@ namespace Cryental.LilacLicensing.Models
                 throw new Exception(parsedResponse.Message);
             }
 
+            /// <summary>
+            ///     Return new object with refreshed data.
+            /// </summary>
+            /// <returns></returns>
             public Object RefreshData()
             {
                 if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -155,6 +177,9 @@ namespace Cryental.LilacLicensing.Models
                 return newObject;
             }
 
+            /// <summary>
+            ///     Unban this license.
+            /// </summary>
             public void Unban()
             {
                 if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -201,6 +226,10 @@ namespace Cryental.LilacLicensing.Models
                 throw new Exception(parsedResponse.Message);
             }
 
+            /// <summary>
+            ///     Modify comment.
+            /// </summary>
+            /// <param name="comment">Comment</param>
             public void ModifyComment(string comment)
             {
                 if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -247,6 +276,10 @@ namespace Cryental.LilacLicensing.Models
                 throw new Exception(parsedResponse.Message);
             }
 
+            /// <summary>
+            ///     Modify custom data. Use if you need to upgrade/downgrade your features.
+            /// </summary>
+            /// <param name="customData">Custom Data</param>
             public void ModifyCustomData(string customData)
             {
                 if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -293,6 +326,9 @@ namespace Cryental.LilacLicensing.Models
                 throw new Exception(parsedResponse.Message);
             }
 
+            /// <summary>
+            ///     Release hardware ID. It will unbind your license key from a specific PC so you can use it for another PC.
+            /// </summary>
             public void ReleaseHardwareID()
             {
                 if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -339,6 +375,10 @@ namespace Cryental.LilacLicensing.Models
                 throw new Exception(parsedResponse.Message);
             }
 
+            /// <summary>
+            ///     Set hardware ID manually.
+            /// </summary>
+            /// <param name="newHardwareID">New hardware ID</param>
             public void SetHardwareID(string newHardwareID)
             {
                 if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -390,6 +430,10 @@ namespace Cryental.LilacLicensing.Models
                 throw new Exception(parsedResponse.Message);
             }
 
+            /// <summary>
+            ///     Extend a license time.
+            /// </summary>
+            /// <param name="hours">Hours</param>
             public void ExtendHours(int hours)
             {
                 if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -441,6 +485,10 @@ namespace Cryental.LilacLicensing.Models
                 throw new Exception(parsedResponse.Message);
             }
 
+            /// <summary>
+            ///     Set hardware lock status.
+            /// </summary>
+            /// <param name="status">Lock status</param>
             public void SetHardwareLockStatus(bool status)
             {
                 if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -487,6 +535,10 @@ namespace Cryental.LilacLicensing.Models
                 throw new Exception(parsedResponse.Message);
             }
 
+            /// <summary>
+            ///     Modify a license time. It will calculate new license time based on an activated date.
+            /// </summary>
+            /// <param name="hours"></param>
             public void ModifyHours(int hours)
             {
                 if (string.IsNullOrEmpty(Config.PrivateKey))
@@ -538,6 +590,9 @@ namespace Cryental.LilacLicensing.Models
                 throw new Exception(parsedResponse.Message);
             }
 
+            /// <summary>
+            ///     Activate this license manually.
+            /// </summary>
             public void Activate()
             {
                 if (IsActivated)

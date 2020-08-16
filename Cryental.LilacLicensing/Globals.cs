@@ -2,6 +2,6 @@
 {
     internal static class Globals
     {
-        internal static readonly string EndPoint = "https://cryental.dev/api/licensing/v2/";
+        internal static readonly string EndPoint = "https://api.cryental.dev/licensing/";
     }
 }

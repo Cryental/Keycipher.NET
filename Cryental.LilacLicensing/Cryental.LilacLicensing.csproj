@@ -54,6 +54,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration.cs" />
@@ -62,6 +65,7 @@
     <Compile Include="Helpers\Verifications.cs" />
     <Compile Include="Licensing.cs" />
     <Compile Include="Models\CommonResponse.cs" />
+    <Compile Include="Models\Geolocation.cs" />
     <Compile Include="Models\Licenses.cs" />
     <Compile Include="Models\License.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Cryental.LilacLicensing.Test
 {
@@ -18,12 +19,15 @@ namespace Cryental.LilacLicensing.Test
 
             try
             {
-                // Generate License
-                var generate = licensing.GenerateLicense(true, 24);
-                Console.WriteLine(generate.License);
+                // Generate 1 License
+                var generate = licensing.GenerateLicense(1, true, 24);
+                foreach (var obj in generate)
+                {
+                    Console.WriteLine(obj.License);
+                }
 
                 // Validate License
-                var validate = licensing.Validate(generate.License);
+                var validate = licensing.Validate(generate[0].License);
                 Console.WriteLine(validate.License);
 
                 // Get All Licenses
@@ -35,7 +39,7 @@ namespace Cryental.LilacLicensing.Test
                 }
 
                 // Delete License
-                licensing.DeleteLicense(generate.License);
+                licensing.DeleteLicense(generate.FirstOrDefault()?.License);
 
                 // Get Current Hardware ID
                 Console.WriteLine(licensing.GetHardwareID());
