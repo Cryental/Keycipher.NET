@@ -35,4 +35,4 @@ Please check a example project in the repo.
 
 This service is not for C# only. We are providing API service for it so you can use for any kind of projects.
 
-Copyright © 2020 Cryental and Volistx Team.
+Copyright © 2020-2021 Cryental and Volistx Team.
