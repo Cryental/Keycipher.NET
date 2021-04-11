@@ -20,7 +20,7 @@ Our servers have advanced mitigation and firewall protections. Every panel is as
 ## 100% free. Even without any hidden fees.
 We offer services without any restrictions. You can use our services for free anywhere, without worrying about licensing costs.
 
-If you want to use this licensing system, please create an account on my website, visit to https://cryental.dev/services/licensing/create and request the service for your product. Your request will accept with 3 business days.
+If you want to use this licensing system, please create an account on my website, visit to https://cryental.dev/services/licensing/create and request the service for your product.
 
 ## Usages
 Please check a example project in the repo.
