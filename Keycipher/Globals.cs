@@ -2,6 +2,6 @@ namespace Keycipher
 {
     internal static class Globals
     {
-        internal static readonly string EndPoint = "https://api.keycipher.dev/v1/";
+        internal static readonly string EndPoint = "https://keycipher.cryental.dev/v1/";
     }
 }
